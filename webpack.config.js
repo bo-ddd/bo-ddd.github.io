@@ -11,7 +11,7 @@ const stylesHandler = isProduction
   : "style-loader";
 
 const conf = getConfig({
-  modules:['index','mine']  //新增模块
+  modules:['index','mine','grid']  //新增模块
 });
 
 const config = {
@@ -24,6 +24,8 @@ const config = {
   devServer: {
     open: true,
     host: "localhost",
+    hot:true,
+    static: './docs',
   },
   plugins: [
     ...conf.html
@@ -48,7 +50,10 @@ const config = {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
       },
-
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
       // Add your rules for custom modules here
       // Learn more about loaders from https://webpack.js.org/loaders/
     ],
