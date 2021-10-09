@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #34495e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+article {
+  color: #fff;
+}
+article:nth-of-type(1) {
+  font-size: 40px;
+  font-weight: bold;
+  opacity: 0;
+  animation-name: show;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+article:nth-of-type(2) {
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 0;
+  animation-name: show;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  float: right;
+}
+@keyframes show {
+  to {
+    opacity: 1;
+  }
+}
+
