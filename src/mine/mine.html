@@ -5,8 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            background:red;
+        }
+
+        .change{
+            animation: move 2s;
+        }
+
+        @keyframes  move {
+            to{
+                background:yellow;
+            }
+        }
+    </style>
 </head>
 <body>
-    my name is mine.html asdf
+    <div class="box1">hello world;</div>
+    <div class="box2">hello world;</div>
+    <div class="box3">hello world;</div>
+    <div class="box4">hello world;</div>
+    <div class="box5">hello world;</div>
+    <div class="box6">hello world;</div>
+    <button id="submit">submit</button>
 </body>
+<script>
+    class Ani{
+        constructor(props){
+            this.targets = props.targets;
+            this.exec();
+        }
+        exec(){ 
+            let targets = this.targets.slice();
+            this.addEventListener(targets);
+        }
+        addEventListener(targets){
+            if(!targets.length) return;
+            let target = targets.shift();
+            target.el.classList.add(target.animationClassName);
+            let _this = this;
+            target.el.addEventListener('animationend',function(e){
+                e.target.classList.remove(target.animationClassName);
+                _this.addEventListener(targets);
+            });
+        }
+    }
+
+    var ani = new Ani({
+        targets:[
+            {
+                el:document.querySelector('.box1'),
+                animationClassName:'change'
+            },
+            {
+                el:document.querySelector('.box2'),
+                animationClassName:'change'
+            },
+            {
+                el:document.querySelector('.box3'),
+                animationClassName:'change'
+            },
+            {
+                el:document.querySelector('.box4'),
+                animationClassName:'change'
+            },
+            {
+                el:document.querySelector('.box5'),
+                animationClassName:'change'
+            },
+            {
+                el:document.querySelector('.box6'),
+                animationClassName:'change'
+            }
+        ]
+    })
+
+    document.getElementById('submit').onclick = function(){
+        ani.exec();
+    }
+
+
+</script>
 </html>
