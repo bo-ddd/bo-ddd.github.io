@@ -11,7 +11,7 @@ const stylesHandler = isProduction
   : "style-loader";
 
 const conf = getConfig({
-  modules:['index','mine','grid']  //新增模块
+  modules:['index','mine','grid','home']  //新增模块
 });
 
 const config = {

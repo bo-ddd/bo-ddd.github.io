@@ -1,1 +1,3 @@
-console.log("home.js is ready")
+setTimeout(function(){
+    window.location.href = 'home.html';
+},3000)
