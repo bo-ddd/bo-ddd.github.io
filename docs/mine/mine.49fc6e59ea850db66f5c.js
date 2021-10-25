@@ -1,1 +1,0 @@
-console.log("mine page is ready new");
