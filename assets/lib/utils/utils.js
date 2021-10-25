@@ -1,5 +1,5 @@
 /**
- * @description 解析html文件中的template;
+ * @description 把文本转换成html;
  * **/
 export const parseHTML = function (text) {
     let el = document.createElement('div');
@@ -24,13 +24,10 @@ export class Ellipsis {
         this.showFindAllButton = props.showFindAllButton || false;
         this.flag = true; //判断是否显示查看全部按钮的显示状态；
     }
-
     get buttonText() {
         return this.flag ? this.findAllButtonText : this.ellipsisButtonText;
     }
-
     beforeMount(){}
-
     exec() {
         this.text = this.el.textContent;
         if (!this.text) throw new Error('文本内容不能为空');
@@ -58,7 +55,6 @@ export class Ellipsis {
         })
         this.el.appendChild(a, this.el.childNodes[0]);
     }
-
     format(str, num) {
         return str.length < num ? str : (str.substring(0, num) + '...');
     }
