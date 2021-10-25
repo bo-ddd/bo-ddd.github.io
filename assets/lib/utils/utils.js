@@ -8,10 +8,10 @@ export const parseHTML = function (text) {
 }
 /**
  * @description 截取字符串,超出...
- * @param el: 元素
- * @param textCount : 字符串截取长度 number类型;
- * @param findAllButtonText: 非必填项,默认为'查看全部'
- * @param showFindAllButton :非必填项,是否显示'查看全部'按钮,默认为false
+ * @param el 元素
+ * @param textCount  字符串截取长度 number类型;
+ * @param findAllButtonText 非必填项,默认为'查看全部'
+ * @param showFindAllButton 非必填项,是否显示'查看全部'按钮,默认为false
  * @author bo-ddd
  * **/
 export class Ellipsis {

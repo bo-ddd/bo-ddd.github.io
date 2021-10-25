@@ -1,4 +1,4 @@
-import article from '../article_route';
+import article from '../article_data';
 import { parseHTML,Markdown } from '../../assets/lib/utils/utils'
 
 (async function () {
