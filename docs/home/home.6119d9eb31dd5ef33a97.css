@@ -1,0 +1,155 @@
+body,
+h2,
+h3,
+h5 {
+  margin: 0;
+  box-sizing: border-box;
+}
+img {
+  display: block;
+}
+.pl-20 {
+  padding: 20px;
+}
+.ml-20 {
+  margin-left: 20px;
+}
+.left {
+  float: left;
+}
+:root {
+  --main_color: #06f;
+}
+body {
+  min-height: 100vh;
+  background: #f6f6f6;
+}
+.header {
+  padding: 10px;
+  border: 1px solid #f2f2f2;
+  background: #fff;
+}
+.header h2 {
+  margin: 0 auto;
+  text-indent: 2em;
+  max-width: 1156px;
+  color: var(--main_color);
+}
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 10px;
+  display: flex;
+}
+.container > section {
+  width: 694px;
+}
+.container > section > header {
+  padding: 20px;
+  background: #fff;
+  border-radius: 2px;
+  line-height: 24px;
+}
+.container > section > header .logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 100px;
+  font-size: 32px;
+  color: #fff;
+  background: var(--main_color);
+  float: left;
+  margin-right: 20px;
+}
+.container > section > section {
+  background: #fff;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+.container > section > section .tabs {
+  display: flex;
+  position: relative;
+  padding: 0 10px;
+}
+.container > section > section .tabs .tab-item {
+  padding: 6px 10px;
+}
+.container > section > section .tabs .tab-item .tab-name {
+  padding: 10px 0;
+  cursor: pointer;
+}
+.container > section > section .tabs .tab-item > .main {
+  background: #fff;
+  position: absolute;
+  left: 0;
+}
+.container > section > section .tabs .tab-item > .main h3 {
+  line-height: 32px;
+  padding-left: 20px;
+}
+.container > section > section .tabs .tab-item > .main article {
+  padding: 0 20px;
+  line-height: 24px;
+}
+.container > section > section .tabs .tab-item > .main .item {
+  border-bottom: 1px solid #f6f6f6;
+  padding: 10px 0;
+  width: 694px;
+}
+.container > aside {
+  background: #fff;
+  margin-left: 10px;
+  width: 296px;
+  padding: 10px 0;
+}
+.container > aside h5 {
+  text-indent: 10px;
+}
+.container > aside > .content button {
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 6px 11px;
+  background: rgba(63, 137, 248, 0.1);
+  border: none;
+  color: var(--main_color);
+  border-radius: 14px;
+}
+.container > aside > .content button:hover {
+  animation: btn-active 0.4s alternate both;
+}
+@keyframes btn-active {
+  100% {
+    background: rgba(63, 137, 248, 0.3);
+  }
+}
+.active {
+  border-bottom: 2px solid var(--main_color);
+}
+.nav {
+  display: flex;
+  margin-top: 10px;
+}
+.nav > button {
+  background: var(--main_color);
+  padding: 6px 14px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.nav img {
+  width: 16px;
+  height: 16px;
+}
+.nav nav {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  justify-content: center;
+  color: #8a8a8a;
+}
+.nav nav span {
+  margin-left: 3px;
+}
+
