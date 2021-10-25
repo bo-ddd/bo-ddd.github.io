@@ -19,7 +19,7 @@ let ellipsis = new Ellipsis({
 // 你得告诉我从第几
 var pagination = {
     pageSize: 2,
-    pageNum: 1,
+    pageNum: 0,
     articles,
     get offset() {
         return this.pageSize * (this.pageNum - 1);
@@ -48,6 +48,7 @@ more.onclick = function () {
 }
 
 function appendChild() {
+    pagination.pageNum++;
     //渲染文章列表
     pagination.data.forEach(async article => {
         var cloneNode = temp.cloneNode(true);
@@ -67,8 +68,9 @@ function appendChild() {
         cloneNode.insertBefore(html, cloneNode.querySelector('.nav'));
         main.insertBefore(cloneNode, more);
     })
-    pagination.pageNum++;
+
     if (pagination.isEnd) {
         more.style.display = 'none';
     }
+
 }
