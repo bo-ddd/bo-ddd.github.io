@@ -1,4 +1,4 @@
-import articles from '../article_route'
+import articles from '../article_data'
 import { parseHTML } from '../../assets/lib/utils/utils';
 
 var tabItem = document.querySelector('.tab-item');
@@ -17,4 +17,53 @@ articles.forEach(async article => {
     }
     cloneNode.insertBefore(html, cloneNode.querySelector('.nav'));
     main.appendChild(cloneNode);
+})
+
+class Vue {
+    constructor(props) {
+        this.el = props.el;
+        this._data = props.data;
+        this.compile(this.el);
+    }
+    compile(el) {
+        let element = document.querySelector(el);
+        this.compileNode(element);
+    }
+    compileNode(el){
+        let childNodes = el.childNodes;
+        childNodes.forEach(node=>{
+            //文本
+            if(node.nodeType == 3){
+                node.textContent = this.compileTextNode(node.textContent);
+            }else if(node.nodeTye == 1){
+                //标签
+            }
+            if(node.childNodes.length){
+                this.compileNode(node)
+            }
+        });
+    }
+    compileTextNode(text){
+        let res = text;
+        let reg = /\{\{\s*([^\s\{{2}\}{2}]*)\s*\}\}/;
+        let flag = false;
+        if(reg.test(res)){
+            res = res.replace(reg,(item)=>{
+                flag = true;
+                let key = RegExp.$1;
+                console.log(key)
+                return this._data[key];
+            })
+        }
+        if(flag) res = this.compileTextNode(res);
+        return res;
+    }
+}
+
+var vm = new Vue({
+    el:'#app',
+    data:{
+        username:'xiaohong',
+        age:18
+    }
 })
