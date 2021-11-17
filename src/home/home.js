@@ -1,5 +1,5 @@
 import articles from '../article_data'
-import { parseHTML, Ellipsis } from '../../assets/lib/utils/utils';
+import { parseHTML, Ellipsis  } from '../../assets/lib/utils/utils';
 
 var tabItem = document.querySelector('.tab-item');
 var main = tabItem.querySelector('.main');
