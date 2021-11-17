@@ -72,5 +72,4 @@ function appendChild() {
     if (pagination.isEnd) {
         more.style.display = 'none';
     }
-
 }
