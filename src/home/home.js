@@ -73,4 +73,3 @@ function appendChild() {
         more.style.display = 'none';
     }
 }
-
